@@ -1,0 +1,26 @@
+@import "../sass/mixins.scss";
+@import "../sass/variables.scss";
+
+.homeCard{
+    @include flex(column, center, row);
+    padding: 2%;
+    width: 60%;
+    margin: auto;
+
+    // .imgBreed{
+    //     float:left;
+    //     @include flex(stretch, flex-start, column);
+    //     @include size(200px, 200px);
+
+        p {
+            width: 200px;
+            align-items: flex-end;
+        }
+
+        img {
+            @include size(200px, 200px)
+            
+            
+        }
+   // }
+}

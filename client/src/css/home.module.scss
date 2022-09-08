@@ -1,0 +1,31 @@
+@import "../sass/mixins.scss";
+@import "../sass/variables.scss";
+
+.contHome {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    grid-column-gap: 20px;
+    justify-content: center;
+
+    .homeCard {
+        @include size(300px, 200px);
+        text-align: center;
+        cursor: pointer;
+        margin: 2%;
+        padding-top: 4%;
+        border-radius: 3%;
+        box-shadow: 10px 10px 5px -4px rgba(36, 36, 36, 0.81);
+        background-color: aqua;
+
+        img {
+            border-radius: 4px;
+            padding: 5px;
+            @include size(450px, 600px);
+
+        }
+  
+        p {
+            font-size: 20px;
+        }
+    }
+}
