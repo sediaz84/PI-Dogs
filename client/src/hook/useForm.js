@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, createBreed, clean } from "../redux/actions/actions";
+import { getTemperaments, createBreed, clean, getBreeds } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
 
 
@@ -9,13 +9,16 @@ export const useForm = (initialForm, validateForm) => {  // por parámetros lleg
     const [errors, setErrors] = useState({});       // se usa para los errores, se inicia como un objeto vacío, el cual se llenara de errores. Si el el objeto está vacío entonces no hay errores
     
     var nameDog = useSelector((state => state.breedsClean)) 
-
+console.log(nameDog)
     const dispatch = useDispatch();
     const history = useHistory();
 
     useEffect(()=>{
-        dispatch(getTemperaments());
-       return ( )=> clean()
+        dispatch(getTemperaments());       
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(getBreeds())
     }, [dispatch])
 
     const temperament = useSelector((state) => state.temperaments).sort((a, b) => {
@@ -60,12 +63,23 @@ export const useForm = (initialForm, validateForm) => {  // por parámetros lleg
         e.preventDefault();
         setErrors(validateForm(form));
         
-        if(Object.keys(errors).length > 0 ){    //preguntamos si el objeto errores esta vacío, si se cumple se procesa
-            alert("Falta completar campos o el nombre es repetido")             
-        } else if (form.name){
-             nameDog.find(e => e.name === form.name)
-            return alert('Nombre repetido')
+        if (form.name){
+            var aux = nameDog.find(e => e.name === form.name)
+            console.log(aux)
+            if(aux !== undefined){
+           return alert('Nombre repetido')
+            } 
         }
+        if(Object.keys(errors).length > 0 ){    //preguntamos si el objeto errores esta vacío, si se cumple se procesa
+            alert("Falta completar campos por completar o hay un error")             
+        } 
+        // else if (form.name){
+        //      var aux = nameDog.find(e => e.name === form.name)
+        //      if(aux !== undefined){
+        //      console.log(aux)
+        //     return alert('Nombre repetido')
+        //      }
+        // }
         
         else if(
             form.name === "" &&

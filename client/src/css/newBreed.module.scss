@@ -3,11 +3,11 @@
 
 .cont{
     display: flex;
-    min-height: 100vh;
+    min-height: 150vh;
     justify-content: center;
     align-items: center;
     //background-color: rgb(161, 215, 226);
-    padding: 50px;
+    padding: 30px;
     background-image: url(../img/huellas.jpg);
     background-size: 800px;       
 }
@@ -17,9 +17,9 @@
     border-radius: 10px;
     padding: 20px;
     width: 600px;
-    height: 800px;
+    height: 900px;
     position:absolute;
-    top: 200px;
+    top: 180px;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 300px;

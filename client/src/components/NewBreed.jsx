@@ -87,6 +87,10 @@ if(!form.life_span_max){
   errors.life_span_max = "La esperanza máxima de vida no debe ser mayor a 16 años"
 }
 
+if(!form.image){
+  errors.image = "El campo es requerido";
+}
+
 
 
 return errors
@@ -237,7 +241,7 @@ const AddBreed = () => {
         value={form.image}
         require='true'
       />
-      {errors.image && <p>{errors.image}</p>}
+      {errors.image && <p className={style.error}>{errors.image}</p>}
       </div>
         <div>
           <label className={style.labelTemperaments}>Temperaments</label>
