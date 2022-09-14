@@ -12,8 +12,8 @@ export default function BreedCard({id, img, name, weightMin, weightMax, temperam
                 <Link to={`/home/${id}`}>
                 <h5>Name: {name}</h5>
                 </Link>
-                <p>Weight Min: {weightMin} Max: {weightMax}</p>
-                <p>Temperament: {temperament}</p>
+                <h6>Weight: </h6><div className={style.parr}><p> Min: {weightMin}/kg - Max: {weightMax}/kg</p></div> 
+                <h6>Temperament:</h6><p> {temperament}</p>                
             </div>
         </div>
     )
