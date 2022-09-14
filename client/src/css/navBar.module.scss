@@ -1,0 +1,21 @@
+@import "../sass/mixins.scss";
+@import "../sass/variables.scss";
+
+.navBar{
+    display: flex;
+    height: 80px;
+    //background-color: darkolivegreen;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(../img/huellas.jpg);
+    background-size: 800px; 
+}
+
+.button{
+    cursor: pointer;
+    margin-top: 10px;
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+}

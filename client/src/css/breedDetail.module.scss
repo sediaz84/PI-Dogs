@@ -1,0 +1,56 @@
+@import "../sass/mixins.scss";
+
+.contDetail{
+    min-height: 150vh;
+    //background-color:rgb(161, 215, 226);
+    background-image: url(../img/huellas.jpg);
+    background-size: 800px;   
+}
+
+.nav{
+    height: 50px;
+    background-color: rgb(161, 215, 226);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     
+}
+
+.detail{
+    display: flex;
+   // background-color: rgb(161, 215, 226);
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(161, 215, 226); 
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+}
+
+.img{
+    width:  400px;
+    height: 300px;
+    object-fit: cover;
+    align-items: center;
+}
+
+
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttonLink{
+    cursor: pointer;
+    margin-top: 10px;
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+}

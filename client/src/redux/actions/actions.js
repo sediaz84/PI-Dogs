@@ -6,8 +6,10 @@ export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS';
 export const FILTER_BREED = 'FILTER_BREED';
 export const FILTER_TEMPERAMENT = 'FILTER_TEMPERAMENT';
 export const ORDER_BY = 'ORDER_BY';
+export const ADD_BREED = 'ADD_BREED';
 export const FAIL = 'FAIL';
 export const LOADING = 'LOADING';
+export const CLEAN = 'CLEAN';
 
 export const getBreeds = () => async dispatch =>{
     await axios.get('http://localhost:3001/dogs')
@@ -30,10 +32,7 @@ export const getBreedsName = (name) => async dispatch =>{
         })
     })
  } catch (error) { 
-    return dispatch({
-        type: FAIL,
-        payload: error.response.data.msg
-    })
+    return alert("Raza no encontrada")
  }
 }
 
@@ -52,6 +51,20 @@ export const getBreedsId = (id) => async dispatch =>{
     } catch (error) { console.log(error)}
 }
 
+export const createBreed = (payload) => async dispatch =>{
+
+    try{
+    await axios.post('http://localhost:3001/dogs', payload)
+    .then(response =>{
+        dispatch({
+            type: ADD_BREED,
+            payload: response.data
+        })
+    })
+} catch (error) {
+          return (error)}
+}
+
 export const getTemperaments = () => async dispatch =>{
     try{
         await axios.get('http://localhost:3001/temperaments')
@@ -62,7 +75,7 @@ export const getTemperaments = () => async dispatch =>{
             })            
         })
     } catch (error){
-
+        return (error)
     }
 }
 
@@ -84,6 +97,13 @@ export function orderBy(payload) {
     return{
         type: ORDER_BY,
         payload
+    }
+}
+
+export function clean() {
+    return{
+        type: CLEAN,
+        
     }
 }
 

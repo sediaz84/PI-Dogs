@@ -2,25 +2,59 @@
 @import "../sass/variables.scss";
 
 .homeCard{
-    @include flex(column, center, row);
-    padding: 2%;
-    width: 60%;
-    margin: auto;
+    @include flex(column, center, column);
+    padding: 20px;
+    width: 180px;
+    height: 330px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #E54222;
+    
+        h5{
+            line-height: 20px;
+            color: rgb(8, 0, 0);
+        }   
 
-    // .imgBreed{
-    //     float:left;
-    //     @include flex(stretch, flex-start, column);
-    //     @include size(200px, 200px);
-
-        p {
-            width: 200px;
-            align-items: flex-end;
+        p {   
+            font-size: 11px;         
+            height: 1px;
+            
         }
 
         img {
-            @include size(200px, 200px)
+            @include size(180px, 150px)
             
             
-        }
-   // }
+        }   
+}
+
+@media screen and (max-width: 800px) {
+
+    .homeCard{
+        @include flex(column, center, column);
+        padding: 15px;
+        width: 100px;
+        height: 400px;
+        margin: 20px;
+        border-radius: 10px;
+        background-color: #E54222;
+        
+            h5{
+                line-height: 20px;
+                color: rgb(8, 0, 0);
+            }   
+    
+            p {   
+                font-size: 11px;         
+                height: 1px;
+                
+            }
+    
+            img {
+                @include size(100px, 130px)
+                
+                
+            }   
+    }
+
 }

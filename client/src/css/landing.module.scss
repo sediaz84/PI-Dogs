@@ -1,0 +1,33 @@
+@import "../sass/mixins.scss";
+@import "../sass/variables.scss";
+
+
+.fondo{
+    min-height: 100vh;       
+    display: flex;
+    align-items: center;
+    background-color: rgb(55, 4, 240);
+
+    .imgDogsLanding{
+        @include size(650px, 550px);
+        
+    }
+    
+    .contTitle{    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    .titleLanding{
+        padding-right: 40px;
+    }    
+    
+    
+    .enter{
+        padding-top: 60px;
+        cursor: pointer;
+        
+    }
+}
+}
+

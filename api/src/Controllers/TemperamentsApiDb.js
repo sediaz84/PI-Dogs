@@ -28,17 +28,15 @@ const getTemperaments = async (req, res)=>{
             let aux = apiTemperament.map(e=> Object.values(e)).flat().join(', ').split(', ');
             let aux2 = new Set(aux)
             let aux3 = [...aux2]
-            let arrayTemperaments = aux3.filter(e=> e !== "").slice(1)
-            console.log(arrayTemperaments)
+            let arrayTemperaments = aux3.filter(e=> e !== "").slice(1);
 
-              arrayTemperaments.map(el=> Temperament.findOrCreate({
+            let temperamentsFinal = arrayTemperaments.sort()
+            console.log(temperamentsFinal)
+
+              temperamentsFinal.map(el=> Temperament.findOrCreate({
                     where: {name: el}
-              }))
-            
-            
-           //console.log(dbTemperament)
-            
-                 
+              }))  
+                                                     
         } else { res.json(dbTemperament) }
     } catch (error) {
         console.log(error)

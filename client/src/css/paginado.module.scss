@@ -1,0 +1,16 @@
+
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);        
+}
+
+.buttonNumber{
+    cursor: pointer;
+    margin-top: 10px;
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+    
+}

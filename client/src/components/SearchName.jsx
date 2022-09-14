@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getBreedsName } from "../redux/actions/actions";
+import working from "../img/Working modificado.png";
+import style from "../css/search.module.scss";
 
-export default function SearchBreed(){
+export default function SearchBreed({paginate}){
    const [search, setSearch] = useState('')
    let dispatch = useDispatch()
 
@@ -15,15 +17,16 @@ export default function SearchBreed(){
 
    function onInputChange(e){
     e.preventDefault()
+    paginate(1)
     setSearch(e.target.value)
    }
     
 
     return(
-        <div>
+        <div>            
             <form onSubmit={onSubmit}>
-                <input type='text' placeholder="Search breed" onChange={onInputChange} value={search} />
-                <input type='submit' value='Buscar' />
+                <input type='text' placeholder="Search breed" onChange={onInputChange} value={search}  className={style.input}/>
+                <input type='submit' value='Buscar' className={style.buttonSearch} />
             </form>
         </div>
 

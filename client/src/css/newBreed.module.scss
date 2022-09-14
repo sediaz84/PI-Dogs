@@ -1,0 +1,130 @@
+@import "../sass/mixins.scss";
+
+
+.cont{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    //background-color: rgb(161, 215, 226);
+    padding: 50px;
+    background-image: url(../img/huellas.jpg);
+    background-size: 800px;       
+}
+
+.form{
+    background-color: #5EBDFC; 
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    height: 800px;
+    position:absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 300px;
+}
+
+.title{
+    font-size:40px;
+    font-weight: bold;
+    color: rgb(4, 4, 18);
+    text-align: center;
+    margin-bottom: 1em;
+
+}
+
+.labelName{
+    font-size: 20px;
+    margin-right: 88px;
+}
+.labelHeightMin{
+    font-size: 20px;
+    margin-right: 43px;
+}
+
+.labelHeightMax{
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.labelWeightMin{
+    font-size: 20px;
+    margin-right: 38px;
+}
+
+.labelWeightMax{
+    font-size: 20px;
+    margin-right: 36px;
+}
+
+.labelLife_span_min{
+    font-size: 20px;
+    margin-right: 23px;
+}
+
+.labelLife_span_max{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.labelTemperaments{    
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.labelImage{    
+    font-size: 20px;
+    margin-right: 88px;
+}
+
+
+.input{
+    color: rgb(24, 4, 4);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.error{    
+    font-size: 11px;
+    color: rgb(160, 8, 8);
+
+}
+
+.select{
+    background-color: white; 
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+}
+
+.buttonHome{
+    margin-top: 10px;
+    background-color: white; 
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttonX{
+    margin-top: 10px;
+    background-color: white; 
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttonCreate{
+    margin-top: 50px;
+    background-color: white; 
+    border: 1px, black;
+    color: black;     
+    font-size: 15px;
+    cursor: pointer;
+}
+
+

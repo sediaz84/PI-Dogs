@@ -1,31 +1,34 @@
 @import "../sass/mixins.scss";
-@import "../sass/variables.scss";
+
+// .body{
+//     background-image: url(../img/huellas.jpg);
+//     background-size: 800px;   
+// }
+
+
+.paginado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    background-color:rgb(161, 215, 226);
+}    
 
 .contHome {
+    min-height: 150vh;
+    //background-color:rgb(161, 215, 226);
+    background-image: url(../img/huellas.jpg);
+    background-size: 800px;   
     display: grid;
-    grid-template-columns: 350px 350px 350px;
-    grid-column-gap: 20px;
-    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 
-    .homeCard {
-        @include size(300px, 200px);
-        text-align: center;
-        cursor: pointer;
-        margin: 2%;
-        padding-top: 4%;
-        border-radius: 3%;
-        box-shadow: 10px 10px 5px -4px rgba(36, 36, 36, 0.81);
-        background-color: aqua;
-
-        img {
-            border-radius: 4px;
-            padding: 5px;
-            @include size(450px, 600px);
-
-        }
-  
-        p {
-            font-size: 20px;
-        }
     }
-}
+
+    .loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);        
+    }
+
+    
