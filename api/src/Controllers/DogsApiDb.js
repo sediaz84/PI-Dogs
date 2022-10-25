@@ -96,14 +96,14 @@ const getBreedsID = async (req, res)=>{
         } 
         
     } catch (error) {
-        console.log('breedId not found')
+        console.log(error)
     }
 
 }
 
 const postCreatedBreed = async (req, res) =>{
     const { name, heightMin, heightMax, weightMin, weightMax, life_span_min, life_span_max, temperament, image } = req.body;
-        var nameFind = await getBreedsApiDb();    
+        //var nameFind = await getBreedsApiDb();    
     try {
         // var aux = nameFind.filter(e => e.name === name)
 
@@ -130,7 +130,6 @@ const postCreatedBreed = async (req, res) =>{
         console.log(error)
         
     }
-
 }
 
 
