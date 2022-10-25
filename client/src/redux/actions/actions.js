@@ -38,9 +38,9 @@ export const getBreedsName = (name) => async dispatch =>{
 
 export const getBreedsId = (id) => async dispatch =>{
     try {
-        dispatch({
-            type: LOADING
-        })
+        // dispatch({
+        //     type: LOADING
+        // })
     await axios.get(`http://localhost:3001/dogs/${id}`)
     .then((response) => {
         dispatch({

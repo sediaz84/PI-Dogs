@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, createBreed, clean, getBreeds } from "../redux/actions/actions";
+import { getTemperaments, createBreed, getBreeds } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
 
 
@@ -73,14 +73,7 @@ console.log(nameDog)
         if(Object.keys(errors).length > 0 ){    //preguntamos si el objeto errores esta vacío, si se cumple se procesa
             alert("Falta completar campos por completar o hay un error")             
         } 
-        // else if (form.name){
-        //      var aux = nameDog.find(e => e.name === form.name)
-        //      if(aux !== undefined){
-        //      console.log(aux)
-        //     return alert('Nombre repetido')
-        //      }
-        // }
-        
+              
         else if(
             form.name === "" &&
             form.heightMin === "" &&                //si hay campos vacíos no prosigue

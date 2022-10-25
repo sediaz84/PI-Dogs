@@ -38,9 +38,7 @@ export default function Breeds(){
                 <NavBar 
                 paginate={paginate}/>
             </div>
-            {breeds.length === 0 ? (
-                <div className={style.loading}><img src={working} alt='loading' /> </div>) : 
-                ( 
+            
             <div className={style.paginado}>
             <Paginado
             postPerPage={postPerPage}
@@ -49,8 +47,8 @@ export default function Breeds(){
             currentPage={currentPage}
           />  
             </div>
-          )}
-
+          
+            
             {breeds.length === 0 ? (
                 <div className={style.loading}><img src={working} alt='loading' /> </div>) : 
                 ( 
@@ -72,7 +70,7 @@ export default function Breeds(){
             }
             </div> 
     )}
-    
-        </div>
+          </div>
+        
     )
 }

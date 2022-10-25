@@ -1,4 +1,4 @@
-import { GET_BREEDS, GET_SEARCH, DETAIL_BREEDS, FAIL, LOADING, CLEAN,
+import { GET_BREEDS, GET_SEARCH, DETAIL_BREEDS, LOADING, CLEAN,
          FILTER_TEMPERAMENT, FILTER_BREED, GET_TEMPERAMENTS, ORDER_BY, ADD_BREED  } from "../actions/actions";
 import { A_Z, Z_A, WEIGHT_MAX, WEIGHT_MIN  } from "../../constantes/order";         
 
@@ -26,7 +26,7 @@ export default function reducer(state = initialState, action){
             return {
                 ...state,
                 breeds: action.payload,
-                error:""
+                //error:""
             }
         case GET_TEMPERAMENTS:
             return {
@@ -72,13 +72,17 @@ export default function reducer(state = initialState, action){
             }          
         case FILTER_BREED:
             let allBreeds = [...state.breedsClean]
-            
+            let aux;
+            console.log(allBreeds)
             if(action.payload === 'All Breeds') return { ...state, breeds: allBreeds}
             if(action.payload === 'Breeds') {
-               var aux = allBreeds.filter(e=> Number(e.id))               
+                aux = allBreeds.filter(e=> Number(e.id))               
             } 
             if(action.payload === 'New Breeds') {
-                 aux = allBreeds.filter(e=> !Number(e.id))
+                aux = allBreeds.filter(e=> !Number(e.id))
+            }
+            if(action.payload === 'Weight -10') {
+                aux = allBreeds.filter(e=> e.weightMin > 10)
             }
 
             console.log(aux)
@@ -97,11 +101,11 @@ export default function reducer(state = initialState, action){
                 newBreed: action.payload
 
             }            
-        case FAIL:
-            return{
-                ...state,
-                error: action.payload
-            }   
+        // case FAIL:
+        //     return{
+        //         ...state,
+        //         error: action.payload
+        //     }   
         case LOADING:
             return{
                 ...state,

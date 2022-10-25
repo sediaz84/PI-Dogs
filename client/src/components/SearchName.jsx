@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getBreedsName } from "../redux/actions/actions";
-import working from "../img/Working modificado.png";
 import style from "../css/search.module.scss";
 
 export default function SearchBreed({paginate}){
@@ -17,8 +16,8 @@ export default function SearchBreed({paginate}){
 
    function onInputChange(e){
     e.preventDefault()
-    paginate(1)
     setSearch(e.target.value)
+    paginate(1)
    }
     
 

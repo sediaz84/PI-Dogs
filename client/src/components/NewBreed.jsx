@@ -19,12 +19,12 @@ const validationsForm = (form) => { //una funcion que recibe los datos del formu
 let errors = {};    //esta variable guarda los errores                   
 let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;  //expresion regular valida que solo se acepten mayúsculas y minúsculas            
 let regexNumbers = /^[0-9]\d*(\.\d+)?$/; //  /[0-9]/ es otra expresión regular para numeros
-//let regexImg = 
+ 
 
 if(!form.name.trim()){  //el trim() evalua que tenga información, que no haya espacios en blanco
     errors.name = "El campo Nombre es requerido";
     } else if(!regexName.test(form.name.trim())) {
-      errors.name = "El capo 'Nombre' solo acepta letras y espacios en blanco"
+      errors.name = "El campo 'Nombre' solo acepta letras y espacios en blanco"
     }
 
 if(!form.heightMin){
@@ -89,6 +89,10 @@ if(!form.life_span_max){
 
 if(!form.image){
   errors.image = "El campo es requerido";
+}
+
+if(form.temperament.length === 0){
+  errors.temperament = "Se requiere mínimo un temperamento"
 }
 
 
@@ -252,12 +256,13 @@ const AddBreed = () => {
                   <option value={e.name} name='temperaments' key={index}>{e.name}</option>
                 ))}  
           </select> 
-          </div>                  
+          </div> 
+                    {errors.temperament && <p className={style.error}>{errors.temperament}</p>}                 
         </div>
                   <div>
                     {form.temperament.map((c, index) => (                                           
-                      <button value={c} onClick={removeTemperaments} key={index} className={style.buttonX}>{c} x</button>                      
-                    ))}
+                      <button value={c} onClick={removeTemperaments} onBlur={handleBlur} key={index} className={style.buttonX}>{c} x</button>                      
+                      ))}
                   </div>
         
       <div>

@@ -9,10 +9,8 @@ export default function Nav({paginate}){
     return (
         <div className={style.navBar}>
 
-            <Link to="/home">
-                <button className={style.button}>Home</button>
-            </Link>
-
+            <button onClick={() => window.location.reload()} className={style.button}>Home</button>
+            
             <SearchName 
             paginate={paginate} />
 

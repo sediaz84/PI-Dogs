@@ -1,5 +1,4 @@
 import React from "react";
-import working from "../img/Working modificado.png";
 import style from "../css/paginado.module.scss";
 
 export default function Pagination({postPerPage, totalPost, paginate, currentPage}) {
